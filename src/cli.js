@@ -23,4 +23,8 @@ export const askQuestion = (question, correctAnswer, name) => {
 
 export const getRandomNumber = (maxNumber) =>
   Math.floor(Math.random() * maxNumber);
+
+export const getOperator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[getRandomNumber(operators.length)];
 };
