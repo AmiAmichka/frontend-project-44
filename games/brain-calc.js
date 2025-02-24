@@ -18,8 +18,19 @@ export const brainCalc = () => {
     const operator = getOperator();
     const question = `${firstNumber} ${operator} ${secondNumber}`;
 
-    // eslint-disable-next-line no-eval
-    const correctAnswer = eval(question).toString();
+    const calculate = () => {
+      switch (operator) {
+        case '+':
+          return firstNumber + secondNumber;
+        case '-':
+          return firstNumber - secondNumber;
+        case '*':
+          return firstNumber * secondNumber;
+        default:
+          return null;
+      }
+    };
+    const correctAnswer = calculate().toString();
 
     const isAnswerCorrect = askQuestion(question, correctAnswer, name);
     if (isAnswerCorrect === false) {
