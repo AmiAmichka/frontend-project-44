@@ -1,4 +1,5 @@
-import { greet, askQuestion, getRandomNumber } from '../src/cli.js';
+import { greet, askQuestion, getRandomNumber } from '../utils.js';
+import { MAX_NUMBER, TRIES_NUMBER } from '../const.js';
 
 const getOperator = () => {
   const operators = ['+', '-', '*'];
@@ -18,24 +19,28 @@ const calculate = (firstNumber, secondNumber, operator) => {
   }
 };
 
+const generateQuestionAndAnswer = () => {
+  const firstNumber = getRandomNumber(MAX_NUMBER);
+  const secondNumber = getRandomNumber(MAX_NUMBER);
+  const operator = getOperator();
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+
+  const correctAnswer = calculate(
+    firstNumber,
+    secondNumber,
+    operator
+  ).toString();
+
+  return [question, correctAnswer];
+};
+
 export const brainCalc = () => {
-  const MAX_NUMBER = 100;
   const name = greet();
 
   console.log('What is the result of the expression?');
 
-  for (let i = 0; i < 3; i += 1) {
-    const firstNumber = getRandomNumber(MAX_NUMBER);
-    const secondNumber = getRandomNumber(MAX_NUMBER);
-    const operator = getOperator();
-    const question = `${firstNumber} ${operator} ${secondNumber}`;
-
-    const correctAnswer = calculate(
-      firstNumber,
-      secondNumber,
-      operator
-    ).toString();
-
+  for (let i = 0; i < TRIES_NUMBER; i += 1) {
+    const [question, correctAnswer] = generateQuestionAndAnswer();
     const isAnswerCorrect = askQuestion(question, correctAnswer, name);
     if (isAnswerCorrect === false) {
       return;

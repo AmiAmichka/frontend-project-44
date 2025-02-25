@@ -1,3 +1,3 @@
-import { greet } from '../src/cli.js';
+import greet from '../cli.js';
 
 export const brainGames = () => greet();
