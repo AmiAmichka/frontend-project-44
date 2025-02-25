@@ -1,13 +1,14 @@
 import readlineSync from 'readline-sync';
+import { TRIES_NUMBER } from './const.js';
 
-export const greet = () => {
+const greet = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
 };
 
-export const askQuestion = (question, correctAnswer, name) => {
+const askQuestion = (question, correctAnswer, name) => {
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
 
@@ -23,3 +24,18 @@ export const askQuestion = (question, correctAnswer, name) => {
 
 export const getRandomNumber = (maxNumber) =>
   Math.floor(Math.random() * maxNumber);
+
+export const getGameTemplate = (rule, generateQuestionAndAnswer) => {
+  const name = greet();
+
+  console.log(rule);
+
+  for (let i = 0; i < TRIES_NUMBER; i += 1) {
+    const [question, correctAnswer] = generateQuestionAndAnswer();
+    const isAnswerCorrect = askQuestion(question, correctAnswer, name);
+    if (isAnswerCorrect === false) {
+      return;
+    }
+  }
+  console.log(`Congratulations, ${name}!`);
+};

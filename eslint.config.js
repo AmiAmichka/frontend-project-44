@@ -55,6 +55,7 @@ export default [
       'import/no-extraneous-dependencies': 'off',
       'comma-dangle': 'off',
       'implicit-arrow-linebreak': 'off',
+      'object-curly-newline': 'off',
     },
   },
 ];

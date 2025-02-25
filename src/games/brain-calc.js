@@ -1,5 +1,5 @@
-import { greet, askQuestion, getRandomNumber } from '../utils.js';
-import { MAX_NUMBER, TRIES_NUMBER } from '../const.js';
+import { getRandomNumber, getGameTemplate } from '../utils.js';
+import { MAX_NUMBER } from '../const.js';
 
 const getOperator = () => {
   const operators = ['+', '-', '*'];
@@ -34,17 +34,9 @@ const generateQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-export const brainCalc = () => {
-  const name = greet();
-
-  console.log('What is the result of the expression?');
-
-  for (let i = 0; i < TRIES_NUMBER; i += 1) {
-    const [question, correctAnswer] = generateQuestionAndAnswer();
-    const isAnswerCorrect = askQuestion(question, correctAnswer, name);
-    if (isAnswerCorrect === false) {
-      return;
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+export default () => {
+  getGameTemplate(
+    'What is the result of the expression?',
+    generateQuestionAndAnswer
+  );
 };
