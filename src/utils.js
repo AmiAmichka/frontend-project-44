@@ -12,7 +12,7 @@ const askQuestion = (question, correctAnswer, name) => {
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
 
-  if (answer !== correctAnswer) {
+  if (answer !== correctAnswer.toString()) {
     console.log(
       `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`
     );
@@ -22,8 +22,8 @@ const askQuestion = (question, correctAnswer, name) => {
   return true;
 };
 
-export const getRandomNumber = (maxNumber) =>
-  Math.floor(Math.random() * maxNumber);
+export const getRandomNumber = (maxNumber, minNumber = 0) =>
+  Math.floor(Math.random() * maxNumber) + minNumber;
 
 export const getGameTemplate = (rule, generateQuestionAndAnswer) => {
   const name = greet();

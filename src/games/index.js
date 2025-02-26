@@ -6,4 +6,6 @@ import brainGames from './brain-games.js';
 
 import brainGcd from './brain-gcd.js';
 
-export { brainCalc, brainEven, brainGames, brainGcd };
+import brainProgression from './brain-progression.js';
+
+export { brainCalc, brainEven, brainGames, brainGcd, brainProgression };

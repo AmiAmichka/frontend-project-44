@@ -18,7 +18,7 @@ const generateQuestionAndAnswer = () => {
   const secondNumber = getRandomNumber(MAX_NUMBER);
   const question = `${firstNumber} ${secondNumber}`;
 
-  const correctAnswer = calculate(firstNumber, secondNumber).toString();
+  const correctAnswer = calculate(firstNumber, secondNumber);
 
   return [question, correctAnswer];
 };

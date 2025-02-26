@@ -25,11 +25,7 @@ const generateQuestionAndAnswer = () => {
   const operator = getOperator();
   const question = `${firstNumber} ${operator} ${secondNumber}`;
 
-  const correctAnswer = calculate(
-    firstNumber,
-    secondNumber,
-    operator
-  ).toString();
+  const correctAnswer = calculate(firstNumber, secondNumber, operator);
 
   return [question, correctAnswer];
 };
