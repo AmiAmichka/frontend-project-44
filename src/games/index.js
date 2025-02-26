@@ -8,4 +8,13 @@ import brainGcd from './brain-gcd.js';
 
 import brainProgression from './brain-progression.js';
 
-export { brainCalc, brainEven, brainGames, brainGcd, brainProgression };
+import brainPrime from './brain-prime.js';
+
+export {
+  brainCalc,
+  brainEven,
+  brainGames,
+  brainGcd,
+  brainProgression,
+  brainPrime,
+};
