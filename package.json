@@ -1,13 +1,9 @@
 {
   "name": "@hexlet/code",
   "version": "1.5.0",
-  "description": "[![Actions Status](https://github.com/AmiAmichka/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AmiAmichka/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "5 console math games, each game has 3 rounds, and in case of an incorrect answer, the game ends.",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "Amina",
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",

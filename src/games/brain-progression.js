@@ -29,7 +29,7 @@ const generateQuestionAndAnswer = () => {
 
   const arrayIndex = getRandomNumber(progression.length);
   const correctAnswer = progression[arrayIndex];
-  progression[arrayIndex] = '...';
+  progression[arrayIndex] = '..';
 
   const question = progression.join(' ');
 
