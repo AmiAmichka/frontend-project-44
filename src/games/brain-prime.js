@@ -18,7 +18,7 @@ const generateQuestionAndAnswer = () => {
 
 export default () => {
   getGameTemplate(
-    'Answer "yes" if the number is prime, otherwise answer "no".',
+    'Answer "yes" if given number is prime. Otherwise answer "no".',
     generateQuestionAndAnswer
   );
 };
