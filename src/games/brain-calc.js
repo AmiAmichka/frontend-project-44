@@ -33,6 +33,6 @@ const generateQuestionAndAnswer = () => {
 export default () => {
   getGameTemplate(
     'What is the result of the expression?',
-    generateQuestionAndAnswer
+    generateQuestionAndAnswer,
   );
 };

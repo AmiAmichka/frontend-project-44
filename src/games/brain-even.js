@@ -10,6 +10,6 @@ const generateQuestionAndAnswer = () => {
 export default () => {
   getGameTemplate(
     'Answer "yes" if the number is even, otherwise answer "no".',
-    generateQuestionAndAnswer
+    generateQuestionAndAnswer,
   );
 };

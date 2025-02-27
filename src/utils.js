@@ -14,7 +14,7 @@ const askQuestion = (question, correctAnswer, name) => {
 
   if (answer !== correctAnswer.toString()) {
     console.log(
-      `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`
+      `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`,
     );
     return false;
   }
@@ -22,8 +22,7 @@ const askQuestion = (question, correctAnswer, name) => {
   return true;
 };
 
-export const getRandomNumber = (maxNumber, minNumber = 0) =>
-  Math.floor(Math.random() * maxNumber) + minNumber;
+export const getRandomNumber = (maxNum, minNum = 0) => Math.floor(Math.random() * maxNum) + minNum;
 
 export const getGameTemplate = (rule, generateQuestionAndAnswer) => {
   const name = greet();

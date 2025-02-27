@@ -10,11 +10,11 @@ const generateQuestionAndAnswer = () => {
   const startNumber = getRandomNumber(MAX_PROGRESSION_START);
   const progressionStep = getRandomNumber(
     MAX_PROGRESSION_STEP,
-    MIN_PROGRESSION_STEP
+    MIN_PROGRESSION_STEP,
   );
   const progressionLength = getRandomNumber(
     MAX_ADDED_PROGRESSION_LENGTH,
-    MIN_PROGRESSION_LENGTH
+    MIN_PROGRESSION_LENGTH,
   );
 
   const progression = [];
@@ -39,6 +39,6 @@ const generateQuestionAndAnswer = () => {
 export default () => {
   getGameTemplate(
     'What number is missing in the progression?',
-    generateQuestionAndAnswer
+    generateQuestionAndAnswer,
   );
 };

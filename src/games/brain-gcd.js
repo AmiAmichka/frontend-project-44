@@ -26,6 +26,6 @@ const generateQuestionAndAnswer = () => {
 export default () => {
   getGameTemplate(
     'Find the greatest common divisor of given numbers.',
-    generateQuestionAndAnswer
+    generateQuestionAndAnswer,
   );
 };
